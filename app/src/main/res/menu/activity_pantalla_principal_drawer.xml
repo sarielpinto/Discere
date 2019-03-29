@@ -7,19 +7,19 @@
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/user_1"
-            android:title="Perfil" />
+            android:title="Profile" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/grafica_2"
-            android:title="Progreso" />
+            android:title="Progress" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ayuda_3"
-            android:title="Ayuda" />
+            android:title="Help" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/salir_3"
-            android:title="Salir" />
+            android:title="Exit" />
     </group>
 
     <item android:title="Communicate">
@@ -27,11 +27,11 @@
             <item
                 android:id="@+id/nav_share"
                 android:icon="@android:drawable/ic_popup_reminder"
-                android:title="Notificaciones" />
+                android:title="Notifications" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/config_1"
-                android:title="Configuracion" />
+                android:title="Configuration" />
         </menu>
     </item>
 
