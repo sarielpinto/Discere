@@ -31,4 +31,3 @@ dependencies {
     implementation 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
     implementation 'com.loopj.android:android-async-http:1.4.9'
 }
-

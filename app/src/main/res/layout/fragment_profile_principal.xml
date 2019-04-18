@@ -2,86 +2,186 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".profile_principal">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="150dp"
-            android:layout_height="120dp"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            app:srcCompat="@drawable/usuariob" />
-
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="300dp"
+        android:background="#FFF">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="NAME"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:background="@color/colorPrimary">
 
-        <TextView
-            android:id="@+id/tv_lastname"
-            android:layout_width="300dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="@drawable/firstlayer">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="300px"
+                    android:layout_height="300px"
+
+                    android:layout_marginBottom="50px"
+                    android:src="@drawable/user_1" />
+
+                <TextView
+                    android:id="@+id/t1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Juan Carlos Batun"
+                    android:textColor="@color/colorTitle"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/t2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5px"
+                    android:layout_marginBottom="50px"
+                    android:text="Hola"
+                    android:textColor="@color/colorSubTitle"
+                    android:textSize="18sp"
+                    android:textStyle="normal" />
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="LAST NAME"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:orientation="horizontal"
+            android:paddingTop="70px"
+            android:paddingLeft="50px"
+            android:layout_marginBottom="70px"
+            android:background="@drawable/secondlayer">
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv_email"
-            android:layout_width="300dp"
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingTop="50px"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="E-MAIL"
-            android:textColor="#000000"
-            android:textSize="20sp" />
+            android:layout_marginLeft="120px">
 
-        <Button
-            android:id="@+id/button_Password"
-            android:layout_width="207dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:background="@drawable/btn_rounded"
-            android:text="Change my password"
-            android:textColor="@color/colorText"
-            android:textStyle="bold"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTitle"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="Email"/>
+                <TextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTitle"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    android:text="email@hola.com"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginRight="20px"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+                android:background="@color/colorTitle"></View>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTitle"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="Name"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTitle"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    android:text="email@hola.com"
+                    android:id="@+id/tv_name"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginRight="20px"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+                android:background="@color/colorTitle"></View>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTitle"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="Last name"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorTitle"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    android:id="@+id/tv_lastname"
+                    android:text="email@hola.com"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginRight="20px"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+                android:background="@color/colorTitle"></View>
+        </LinearLayout>
 
-            />
+        <LinearLayout
 
-        <Button
-            android:id="@+id/button_Edit"
-            android:layout_width="207dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:layout_marginBottom="100dp"
-            android:background="@drawable/btn_rounded"
-            android:text="Edit"
-            android:textColor="@color/colorText"
-            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            />
+            <Button
+                android:id="@+id/button_Password"
+                android:layout_width="207dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:background="@drawable/btn_rounded"
+                android:text="Change my password"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"/>
+            <Button
+                android:id="@+id/button_Edit"
+                android:layout_width="207dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_marginBottom="100dp"
+                android:background="@drawable/btn_rounded"
+                android:text="Edit"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                />
 
+
+        </LinearLayout>
     </LinearLayout>
-
 </FrameLayout>
