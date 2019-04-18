@@ -7,6 +7,4 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".pantalla_principal"
     tools:showIn="@layout/app_bar_pantalla_principal"
-    android:id="@+id/contenedor_principal">
-
-</android.support.constraint.ConstraintLayout>
+    android:id="@+id/contenedor_principal"/>

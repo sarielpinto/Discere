@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    tools:context=".ProfileDos">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +24,9 @@
                 android:layout_height="120dp"
                 android:layout_gravity="left"
                 android:layout_margin="10dp"
-                app:srcCompat="@drawable/usuariob" />
+                app:srcCompat="@drawable/usuariob"
+                android:onClick="onclick"
+                />
 
         </LinearLayout>
 
@@ -33,7 +36,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/et_name"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -41,43 +44,45 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Name" />
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:inputType="textPersonName"
-        android:text="Last Name" />
+
+        <EditText
+            android:id="@+id/et_lastname"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Last Name" />
 
     </LinearLayout>
 
     </LinearLayout>
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/et_email"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_gravity="center"
+        android:ems="10"
         android:inputType="textPersonName"
         android:text="Email" />
+
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/et_gender"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_gravity="center"
+        android:ems="10"
         android:inputType="textPersonName"
         android:text="Gender" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/et_phone"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:layout_gravity="center"
+        android:ems="10"
         android:inputType="textPersonName"
         android:text="Phone" />
 
@@ -86,27 +91,34 @@
         android:orientation="horizontal"
         android:layout_margin="20dp"
         android:layout_height="match_parent">
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#ffffff"
-        android:textColor="#0033ff"
-        android:textStyle="bold"
-        android:layout_marginRight="105dp"
-        android:text="Update" />
-    <Button
-        android:id="@+id/button"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#ffffff"
-        android:textColor="#0033ff"
-        android:textStyle="bold"
-        android:text="Cancel" />
+
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_rounded"
+            android:text="Update"
+            android:textColor="@color/colorText"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_cancelar"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_rounded"
+            android:text="Cancel"
+            android:textColor="@color/colorText"
+            android:textStyle="bold" />
+
+
 
     </LinearLayout>
+
+
 
 
 </LinearLayout>

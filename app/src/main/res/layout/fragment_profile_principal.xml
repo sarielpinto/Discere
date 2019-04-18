@@ -6,76 +6,81 @@
     tools:context=".profile_principal">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="150dp"
             android:layout_height="120dp"
-            android:layout_margin="10dp"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
             app:srcCompat="@drawable/usuariob" />
 
-        <EditText
-            android:id="@+id/editText1"
+        <TextView
+            android:id="@+id/tv_name"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:layout_gravity="center"
-            android:inputType="textPersonName"
-            android:text="Phone" />
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
             android:ems="10"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
             android:inputType="textPersonName"
-            android:text="Email" />
+            android:text="NAME"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/editText3"
+        <TextView
+            android:id="@+id/tv_lastname"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_margin="10dp"
             android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:ems="10"
             android:inputType="textPersonName"
-            android:text="Payment Date" />
+            android:text="LAST NAME"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="E-MAIL"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="120dp"
+            android:id="@+id/button_Password"
+            android:layout_width="207dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="#ffffff"
-            android:textColor="#0033ff"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_rounded"
+            android:text="Change my password"
+            android:textColor="@color/colorText"
             android:textStyle="bold"
-            android:text="Save" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            app:srcCompat="@drawable/lapiz" />
+            />
 
         <Button
-            android:id="@+id/buttonPasword"
-            android:layout_width="210dp"
-            android:layout_gravity="center"
+            android:id="@+id/button_Edit"
+            android:layout_width="207dp"
             android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:textColor="#0033ff"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/btn_rounded"
+            android:text="Edit"
+            android:textColor="@color/colorText"
             android:textStyle="bold"
-            android:text="Change my password" />
+
+            />
 
     </LinearLayout>
 
