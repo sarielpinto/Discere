@@ -37,7 +37,7 @@ public class profile_principal extends Fragment {
     public String nombre_1_1;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    TextView nombre, apellido, email;
+    TextView nombre, apellido, email,nombre_1,apellido_1;
     public static String NAME1, LAST_NAME1, GENDER1, ID1, EMAIL1, TEL1, PASSWORD1;//CLASE
     JSONObject jsonObject;
 
@@ -98,7 +98,9 @@ View vista;
         Button Imangenpas = (Button) vista.findViewById(R.id.button_Edit) ;
         Button btnpas = (Button) vista.findViewById(R.id.button_Password);
         nombre = (TextView)vista.findViewById(R.id.tv_name);
+        nombre_1 = (TextView)vista.findViewById(R.id.t1);
         apellido = (TextView)vista.findViewById(R.id.tv_lastname);
+        apellido_1 = (TextView)vista.findViewById(R.id.t2);
         email = (TextView)vista.findViewById(R.id.tv_email);
 
         cargarP();
@@ -191,6 +193,8 @@ View vista;
 
                         nombre.setText(jsonObject.getJSONArray("datos").getJSONObject(0).getString("name"));
                         apellido.setText(jsonObject.getJSONArray("datos").getJSONObject(0).getString("last_name"));
+                        nombre_1.setText(jsonObject.getJSONArray("datos").getJSONObject(0).getString("name"));
+                        apellido_1.setText(jsonObject.getJSONArray("datos").getJSONObject(0).getString("last_name"));
                         email.setText(jsonObject.getJSONArray("datos").getJSONObject(0).getString("email"));
 
 

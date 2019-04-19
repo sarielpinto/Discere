@@ -19,10 +19,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+
                 android:orientation="vertical"
                 android:background="@drawable/firstlayer">
 
                 <ImageView
+                    android:layout_marginTop="20dp"
                     android:id="@+id/imageView2"
                     android:layout_width="300px"
                     android:layout_height="300px"
@@ -34,7 +36,7 @@
                     android:id="@+id/t1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Juan Carlos Batun"
+                    android:text=" "
                     android:textColor="@color/colorTitle"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -45,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5px"
                     android:layout_marginBottom="50px"
-                    android:text="Hola"
+                    android:text=" "
                     android:textColor="@color/colorSubTitle"
                     android:textSize="18sp"
                     android:textStyle="normal" />
@@ -64,7 +66,7 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:paddingTop="50px"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="120px">
@@ -153,7 +155,7 @@
         </LinearLayout>
 
         <LinearLayout
-
+            android:paddingTop="60px"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -161,23 +163,22 @@
             <Button
                 android:id="@+id/button_Password"
                 android:layout_width="207dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/btn_rounded"
-                android:text="Change my password"
-                android:textColor="@color/colorText"
-                android:textStyle="bold"/>
+                android:text="Change Passwor"
+                android:textColor="#fff"
+                android:textSize="15sp" />
             <Button
+                android:layout_gravity="center"
                 android:id="@+id/button_Edit"
                 android:layout_width="207dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_marginBottom="100dp"
-                android:background="@drawable/btn_rounded"
+                android:layout_height="40dp"
                 android:text="Edit"
-                android:textColor="@color/colorText"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:background="@drawable/btn_rounded"
                 android:textStyle="bold"
                 />
 
