@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.github.clans.fab.FloatingActionMenu;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -42,6 +43,7 @@ public class profile_principal extends Fragment {
     private String mParam1;
     private String mParam2;
 View vista;
+    FloatingActionMenu actionMenu;
     private OnFragmentInteractionListener mListener;
 
     public profile_principal() {
@@ -96,7 +98,6 @@ View vista;
         apellido = (TextView)vista.findViewById(R.id.tv_lastname);
         apellido_1 = (TextView)vista.findViewById(R.id.t2);
         email = (TextView)vista.findViewById(R.id.tv_email);
-
         cargarP();
 
 

@@ -91,6 +91,7 @@ public class pantalla_principal extends AppCompatActivity implements NavigationV
             fragmentSeleccionado = true;
         }else if (id == R.id.nav_camera) {
             miFragment = new profile_principal();
+            actionMenu.setVisibility(View.GONE);
             fragmentSeleccionado=true;
         } else if (id == R.id.nav_gallery) {
 
