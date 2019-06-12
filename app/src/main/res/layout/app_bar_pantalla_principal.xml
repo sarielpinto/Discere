@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:onClick="ver"
-                app:fab_label="See"
+                app:fab_label="Calendario"
                 android:src="@drawable/ic_submenu1"
                 app:fab_colorNormal="@color/colorPrimary"
                 app:fab_colorPressed="@color/colorPrimaryDark"/>
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:onClick="agendar"
-                app:fab_label="Schedule"
+                app:fab_label="Agendar"
                 android:src="@drawable/ic_submenu1"
                 app:fab_colorNormal="@color/colorPrimary"
                 app:fab_colorPressed="@color/colorPrimaryDark"/>

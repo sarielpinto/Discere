@@ -170,7 +170,6 @@ public class Login extends AppCompatActivity {
                     edit.commit();
                     Intent i = new Intent(Login.this, pantalla_principal.class);
                     i.putExtra("hola",username);
-                    i.putExtra("nombre",NAME1);
                     finish();
                     startActivity(i);
                     return json.getString(TAG_MESSAGE);
