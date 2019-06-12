@@ -276,23 +276,6 @@ public class ProfileDos extends AppCompatActivity
     }
 
 
-    private  void cargarPreferencias()
-    {
-        SharedPreferences preferencia = getSharedPreferences("Credenciales", Context.MODE_PRIVATE);
-        String parametroUsu = preferencia.getString("user", "NO EXISTE");
-
-
-        USUARIO = parametroUsu;
-
-        if(USUARIO != null){
-
-            datosc(USUARIO);
-        }else {
-
-        }
-
-    }//Fin cargar preferencias
-
 
 
 
@@ -324,9 +307,6 @@ public class ProfileDos extends AppCompatActivity
                         correoe.setText(jsonObject.getJSONArray("datos").getJSONObject(0).getString("email"));
                         genero.setText( jsonObject.getJSONArray("datos").getJSONObject(0).getString("gender"));
                         tel.setText(jsonObject.getJSONArray("datos").getJSONObject(0).getString("telephone_number"));
-                     //   ID_USUARIO=jsonObject.getJSONArray("datos").getJSONObject(0).getString("id_");
-
-                       // guardarPreferencias();
 
 
 
@@ -387,9 +367,10 @@ public class ProfileDos extends AppCompatActivity
 
                 if (statusCode==200) // Lo mismo que con LOGIN
                 {
-
-
                     Toast.makeText(ProfileDos.this, "Changes saved", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(ProfileDos.this, profile_principal.class);
+                    startActivity(i);
+                    finish();
                     }
                     else
                 {
@@ -409,23 +390,6 @@ public class ProfileDos extends AppCompatActivity
 
     }//FIN EDITAR USUARIO
 
-
-
-    private void guardarPreferencias() {
-
-        SharedPreferences preferencia = getSharedPreferences("Credenciales", Context.MODE_PRIVATE);
-        String correo = correoe.getText().toString();
-
-        SharedPreferences.Editor editor = preferencia.edit();
-        editor.putString("email", correo);
-        editor.putString("idUsu", ID_USUARIO);
-        editor.putString("user", nombre.getText().toString());
-        editor.putString("apellido", apellido.getText().toString());
-        editor.commit();
-
-
-
-    }//Fin guardar preferencias
 
     private  void cargarP()
     {

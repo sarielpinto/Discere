@@ -1,6 +1,7 @@
 package com.jhpat.discere;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -64,9 +65,10 @@ public class Profile_Password extends AppCompatActivity {
 
                 if (statusCode==200) // Lo mismo que con LOGIN
                 {
-
-
                     Toast.makeText(Profile_Password.this, "Change saved", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(Profile_Password.this, profile_principal.class);
+                    startActivity(i);
+                    finish();
                 }
                 else
                 {

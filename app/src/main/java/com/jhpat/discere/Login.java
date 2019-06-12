@@ -8,13 +8,11 @@ import android.content.SharedPreferences.Editor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -36,6 +34,8 @@ public class Login extends AppCompatActivity {
     private EditText user, pass;
     private Button mSubmit, mRegister,logD;
     private ProgressDialog pDialog;
+    private CheckBox RBsesion;
+    private boolean isActivateCheckBox;
 
     JSONObject jsonObject;
     // Clase JSONParser
@@ -53,9 +53,12 @@ public class Login extends AppCompatActivity {
     // La respuesta del JSON es
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
-    public static String NAME1, LAST_NAME1, GENDER1, ID1, EMAIL1, TEL1, PASSWORD1;
+    public static String NAME1, LAST_NAME1, GENDER1, ID1, EMAIL1, TEL1, PASSWORD1, TIPO1;
     String nom = null;
     String pas = null;
+
+    private static final String STRING_PREFERENCE = "estadoc";
+    private static final String PREFERENCE_ESTADO_BUTTON = "estado.button";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +66,11 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-
+        if (obtenerestadoc()){
+            Intent i = new Intent(Login.this, pantalla_principal.class);
+            startActivity(i);
+            finish();
+        }
         // setup input fields
         user = (EditText) findViewById(R.id.userD);
         pass = (EditText) findViewById(R.id.passD);
@@ -77,13 +84,41 @@ public class Login extends AppCompatActivity {
                 new AttemptLogin().execute();
 
                 datosc(user.getText().toString());
+
             }
         });
 
+        //Don´t out sesion
+        RBsesion = (CheckBox) findViewById(R.id.RBSecion);
+        isActivateCheckBox = RBsesion.isChecked(); //DESACTIVADO
 
+        RBsesion.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(isActivateCheckBox){
+                    RBsesion.setChecked(false);
+                }
+                isActivateCheckBox = RBsesion.isChecked();
+
+            }
+        });
 
     }
 
+    public static void cambiarEstado(Context c,boolean b){
+        SharedPreferences preferences = c.getSharedPreferences(STRING_PREFERENCE,MODE_PRIVATE);
+        preferences.edit().putBoolean(PREFERENCE_ESTADO_BUTTON,b).apply();
+    }
+    public void estadoCheckBox(){
+        SharedPreferences preferences = getSharedPreferences(STRING_PREFERENCE,MODE_PRIVATE);
+        preferences.edit().putBoolean(PREFERENCE_ESTADO_BUTTON,RBsesion.isChecked()).apply();
+
+    }
+
+    public boolean obtenerestadoc(){
+        SharedPreferences preferences = getSharedPreferences(STRING_PREFERENCE,MODE_PRIVATE);
+        return preferences.getBoolean(PREFERENCE_ESTADO_BUTTON,false);
+    }
 
     class AttemptLogin extends AsyncTask<String, String, String> {
 
@@ -103,7 +138,6 @@ public class Login extends AppCompatActivity {
             String username = user.getText().toString();
             String password = pass.getText().toString();
 
-           // guardarPreferencias();
 
 
 
@@ -127,7 +161,6 @@ public class Login extends AppCompatActivity {
                 // json success tag
                 success = json.getInt(TAG_SUCCESS);
                 if (success == 1) {
-
                     Log.d("Login Successful!", json.toString());
                     // save user data
                     SharedPreferences sp = PreferenceManager
@@ -136,6 +169,8 @@ public class Login extends AppCompatActivity {
                     edit.putString("username", username);
                     edit.commit();
                     Intent i = new Intent(Login.this, pantalla_principal.class);
+                    i.putExtra("hola",username);
+                    i.putExtra("nombre",NAME1);
                     finish();
                     startActivity(i);
                     return json.getString(TAG_MESSAGE);
@@ -201,6 +236,7 @@ public class Login extends AppCompatActivity {
                 {
 
 
+                    estadoCheckBox();
                     try {
                         jsonObject = new JSONObject(new String(responseBody));
                         //Apartir de aqui, les asigno a los editText el valor que obtengo del webservice
@@ -215,6 +251,8 @@ public class Login extends AppCompatActivity {
 
 
                         guardarPreferencias();
+                        obtenTipo(ID1);
+
                     } catch (JSONException e) {
 
                     }
@@ -222,6 +260,8 @@ public class Login extends AppCompatActivity {
 
                 else
                 {
+                    Toast.makeText(Login.this, "No se pudo conectar al servidor", Toast.LENGTH_SHORT).show();
+
                 }
 
             }
@@ -237,5 +277,82 @@ public class Login extends AppCompatActivity {
 
 
     }//FIN DATOSSC
+
+
+
+    public void obtenTipo (String Correo)
+    {
+
+        AsyncHttpClient conexion = new AsyncHttpClient();
+        final String url ="http://puntosingular.mx/cas/obtener_tipo_usuario.php"; //la url del web service
+        // final String urlimagen ="http://dominio.com/assets/img/perfil/"; //aqui se encuentran todas las imagenes de perfil. solo especifico la ruta por que el nombre de las imagenes se encuentra almacenado en la bd.
+        final RequestParams requestParams =new RequestParams();
+        requestParams.add("correo",Correo); //envio el parametro
+        conexion.post(url, requestParams, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody)
+            {
+
+                if (statusCode==200) // Lo mismo que con LOGIN
+                {
+
+                    try {
+                        jsonObject = new JSONObject(new String(responseBody));
+                        //Apartir de aqui, les asigno a los editText el valor que obtengo del webservice
+                       final String TIPO= jsonObject.getJSONArray("tipo").getJSONObject(0).getString("id_role");
+
+                       if (TIPO.equalsIgnoreCase("17"))
+                       {
+                           TIPO1="Coach";
+                       }
+                        if (TIPO.equalsIgnoreCase("24"))
+                        {
+                            TIPO1="Fellow";
+                        }
+                        if (TIPO.equalsIgnoreCase("18"))
+                        {
+                            TIPO1="Speaker";
+                        }
+
+                        guardarPreferencias2();
+                    } catch (JSONException e) {
+
+                    }
+                }
+
+                else
+                {
+                    Toast.makeText(Login.this, "No se pudo conectar al servidor", Toast.LENGTH_SHORT).show();
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error)
+            {
+
+                Toast.makeText(Login.this, "No se pudo conectar al servidor", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+    }//FIN DATOSSC
+
+
+    private void guardarPreferencias2()
+    {
+
+        SharedPreferences preferencia = getSharedPreferences("Credenciales", Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = preferencia.edit();
+        editor.putString("TIPO2", TIPO1);
+        editor.commit();
+
+    }
+
+
+
 
 }

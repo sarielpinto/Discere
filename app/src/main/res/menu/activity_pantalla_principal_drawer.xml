@@ -17,11 +17,15 @@
             android:icon="@drawable/grafica_2"
             android:title="Progress" />
         <item
+            android:id="@+id/nav_skype"
+            android:icon="@drawable/skype"
+            android:title="Skype"/>
+        <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ayuda_3"
             android:title="Help" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_out"
             android:icon="@drawable/salir_3"
             android:title="Exit" />
     </group>

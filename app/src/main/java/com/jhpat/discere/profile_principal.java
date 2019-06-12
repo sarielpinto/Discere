@@ -6,14 +6,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
-
 import android.support.v4.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import android.widget.TextView;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -24,9 +21,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
-
-
-import static com.jhpat.discere.ProfileDos.USUARIO;
 
 
 public class profile_principal extends Fragment {
@@ -169,7 +163,7 @@ View vista;
     }
 
 
-    public void datosc (String Correo)
+    public void datosc (String Correo, final String t)
     {
 
         AsyncHttpClient conexion = new AsyncHttpClient();
@@ -192,6 +186,7 @@ View vista;
 
 
                         nombre.setText(jsonObject.getJSONArray("datos").getJSONObject(0).getString("name"));
+                       // nombre.setText("Tipo: "+t);
                         apellido.setText(jsonObject.getJSONArray("datos").getJSONObject(0).getString("last_name"));
                         nombre_1.setText(jsonObject.getJSONArray("datos").getJSONObject(0).getString("name"));
                         apellido_1.setText(jsonObject.getJSONArray("datos").getJSONObject(0).getString("last_name"));
@@ -229,42 +224,17 @@ View vista;
     }//FIN DATOSSC
 
 
-    private  void cargarPreferencias()
-    {
-        SharedPreferences preferencia = this.getActivity().getSharedPreferences("Credenciales", Context.MODE_PRIVATE);
-        String parametroUsu = preferencia.getString("user", "NO EXISTE");
 
-
-        USUARIO = parametroUsu;
-
-        if(USUARIO != null){
-            datosc(USUARIO);
-        }else {
-
-        }
-
-    }//Fin cargar preferencias
-
-    private void guardarPreferencias()
-    {
-
-        SharedPreferences preferencia = this.getActivity().getSharedPreferences("Credenciales", Context.MODE_PRIVATE);
-        String correo = nombre.getText().toString();
-
-        SharedPreferences.Editor editor = preferencia.edit();
-        editor.putString("user", correo);
-
-        editor.commit();
-
-    }//Fin guardar preferencias
 
 
     private  void cargarP()
     {
         SharedPreferences preferencia = this.getActivity().getSharedPreferences("Credenciales", Context.MODE_PRIVATE);
         ID1 = preferencia.getString("ID2", "NO EXISTE");
+        String tipo = preferencia.getString("TIPO2", "NO EXISTE");
 
-        datosc(ID1);
+
+        datosc(ID1, tipo);
 
 
 
