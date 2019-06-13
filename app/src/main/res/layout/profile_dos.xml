@@ -101,7 +101,8 @@
             android:background="@drawable/btn_rounded"
             android:text="Update"
             android:textColor="@color/colorText"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
         <Button
             android:id="@+id/btn_cancelar"

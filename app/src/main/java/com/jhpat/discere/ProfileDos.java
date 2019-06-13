@@ -86,7 +86,8 @@ public class ProfileDos extends AppCompatActivity
             public void onClick(View v) {
 
 
-
+                Intent intent= new  Intent(ProfileDos.this,profile_principal.class);
+                startActivity(intent);
                // editarDatos(ID_USUARIO);
                 editarDatos(ID1);
 
@@ -98,6 +99,8 @@ public class ProfileDos extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
+                Intent intent= new  Intent(ProfileDos.this,profile_principal.class);
+                startActivity(intent);
                 Toast.makeText(ProfileDos.this, "Unsaved data", Toast.LENGTH_SHORT).show();
 
 
@@ -209,6 +212,8 @@ public class ProfileDos extends AppCompatActivity
         alertOpciones.show();
 
     }
+
+
 
     private void tomarFotografia() {
         File fileImagen=new File(Environment.getExternalStorageDirectory(),RUTA_IMAGEN);
