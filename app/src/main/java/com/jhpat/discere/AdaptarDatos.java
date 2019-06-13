@@ -38,12 +38,11 @@ public class AdaptarDatos extends RecyclerView.Adapter<AdaptarDatos.ViewHolderDa
     public class ViewHolderDatos extends RecyclerView.ViewHolder{
 
         TextView dato;
-        CardView cart1;
+
 
         public ViewHolderDatos(View itemView){
             super(itemView);
             dato = (TextView) itemView.findViewById(R.id.idDato);
-            cart1 = (CardView) itemView.findViewById(R.id.cart);
         }
 
         public void asignarDatos(String s) {
