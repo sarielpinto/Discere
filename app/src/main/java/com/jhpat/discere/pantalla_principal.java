@@ -91,7 +91,7 @@ public class pantalla_principal extends AppCompatActivity implements NavigationV
         boolean fragmentSeleccionado=false;
         if (id == R.id.nav_home) {
             miFragment = new fragment_principal();
-            actionMenu.setVisibility(View.GONE);
+
             fragmentSeleccionado = true;
         }else if (id == R.id.nav_camera) {
             miFragment = new profile_principal();
@@ -203,7 +203,7 @@ public class pantalla_principal extends AppCompatActivity implements NavigationV
     {
         SharedPreferences preferencia =getSharedPreferences("Credenciales", Context.MODE_PRIVATE);
         usuario= preferencia.getString("ID2", "NO EXISTE");
-        nombre=preferencia.getString("EMAIL2","Hola");
+        nombre=preferencia.getString("EMAIL2","NO EXISTE");
         datosc(usuario);
     }//Fin cargar preferencias
 
