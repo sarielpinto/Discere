@@ -61,8 +61,8 @@ public class pantalla_principal extends AppCompatActivity implements NavigationV
         C=(TextView)hview.findViewById(R.id.Nombre);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Bundle datos = this.getIntent().getExtras();
-        usuario=datos.getString("hola");
+        //Bundle datos = this.getIntent().getExtras();
+        //usuario=datos.getString("hola");
 
 
 
