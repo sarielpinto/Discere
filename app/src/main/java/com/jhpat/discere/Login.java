@@ -169,8 +169,7 @@ public class Login extends AppCompatActivity {
                     edit.putString("username", username);
                     edit.commit();
                     Intent i = new Intent(Login.this, pantalla_principal.class);
-                    i.putExtra("hola",username);
-                    i.putExtra("nombre",NAME1);
+                    i.putExtra("hola",EMAIL1);
                     finish();
                     startActivity(i);
                     return json.getString(TAG_MESSAGE);
@@ -204,7 +203,7 @@ public class Login extends AppCompatActivity {
 
 
         SharedPreferences.Editor editor = preferencia.edit();
-        editor.clear();
+        //editor.clear();
         editor.putString("user", parametroUsu);
         editor.putString("password", contraUsu);
         editor.putString("NAME2", NAME1);
