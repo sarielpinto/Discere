@@ -31,7 +31,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class pantalla_principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener ,profile_principal.OnFragmentInteractionListener,fragment_principal.OnFragmentInteractionListener, Fragment_skype.OnFragmentInteractionListener{
     private TextView N,C;
-    String usuario,TIPO1;
+    String usuario,TIPO1,nombre;
     FloatingActionMenu actionMenu;
     com.github.clans.fab.FloatingActionButton ver,Agendar;
     JSONObject jsonObject;
@@ -61,8 +61,8 @@ public class pantalla_principal extends AppCompatActivity implements NavigationV
         C=(TextView)hview.findViewById(R.id.Nombre);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //Bundle datos = this.getIntent().getExtras();
-        //usuario=datos.getString("hola");
+        Bundle datos = this.getIntent().getExtras();
+        usuario=datos.getString("hola");
 
 
 
@@ -203,6 +203,7 @@ public class pantalla_principal extends AppCompatActivity implements NavigationV
     {
         SharedPreferences preferencia =getSharedPreferences("Credenciales", Context.MODE_PRIVATE);
         usuario= preferencia.getString("ID2", "NO EXISTE");
+        nombre=preferencia.getString("EMAIL2","Hola");
         datosc(usuario);
     }//Fin cargar preferencias
 
