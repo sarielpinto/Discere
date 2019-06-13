@@ -1,12 +1,22 @@
 package com.jhpat.discere;
 
+import android.app.Person;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,10 +29,11 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity{
     public GregorianCalendar cal_month, cal_month_copy;
     private HwAdapter hwAdapter;
     private TextView tv_month;
@@ -34,6 +45,11 @@ public class MainActivity2 extends AppCompatActivity {
     private String horaIE;
     private String horaFE;
     private String mandafecha;
+    private Context context;
+
+    ArrayList<String> listDatos;
+    RecyclerView recycler;
+
 
 
 
@@ -42,6 +58,26 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+//------------------------------------------------------------------------------------------
+        recycler= (RecyclerView) findViewById(R.id.Recyclerid);
+        recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+        listDatos = new ArrayList<String>();
+
+        listDatos.add("aqui van los datos");
+        listDatos.add("aqui van los datos");
+        listDatos.add("aqui van los datos");
+        listDatos.add("aqui van los datos");
+        listDatos.add("aqui van los datos");
+        listDatos.add("aqui van los datos");
+        listDatos.add("aqui van los datos");
+        listDatos.add("aqui van los datos");
+        listDatos.add("aqui van los datos");
+
+
+        AdaptarDatos adapter = new AdaptarDatos(listDatos);
+        recycler.setAdapter(adapter);
+//------------------------------------------------------------------------------------------
         //Aqui llamamo al metodo
 
 
