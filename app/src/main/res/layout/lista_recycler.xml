@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="390dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="#B45555"
+        android:id="@+id/cart">
+
+        <TextView
+            android:layout_width="370dp"
+            android:layout_height="40dp"
+            android:id="@+id/idDato"
+            android:text="Dato"
+            android:layout_margin="5dp"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textStyle="bold"/>
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>
