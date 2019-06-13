@@ -100,9 +100,8 @@ public class pantalla_principal extends AppCompatActivity implements NavigationV
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_skype){
-            miFragment = new Fragment_skype();
-            actionMenu.setVisibility(View.GONE);
-            fragmentSeleccionado=true;
+            Skype();
+            return true;
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_out) {
@@ -120,6 +119,17 @@ public class pantalla_principal extends AppCompatActivity implements NavigationV
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void Skype(){
+        Intent launchIntent = getPackageManager().getLaunchIntentForPackage("com.skype.raider");
+
+        if (launchIntent != null){
+            startActivity(launchIntent);
+        }else{
+            Toast.makeText(this,"No cuentas con la aplicacón de skype :(",Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void onOutSesion() {
