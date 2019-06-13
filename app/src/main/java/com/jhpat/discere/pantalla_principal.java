@@ -127,7 +127,7 @@ public class pantalla_principal extends AppCompatActivity implements NavigationV
         if (launchIntent != null){
             startActivity(launchIntent);
         }else{
-            Toast.makeText(this,"No cuentas con la aplicacón de skype :(",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"You do not have the Skype application :(",Toast.LENGTH_LONG).show();
         }
 
     }
