@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -122,9 +123,9 @@ public class Activity_Agendar extends AppCompatActivity implements Response.List
         progreso.show();
         //barra de dialogo
         int id=14;
-        String tipo="coach",titulo="pruebas",star="2019-06-17%2000:02:00.000000",fin="2019-06-26%2000:02:00.000000";
-        String x_1=te_1.getText().toString()+"%"+te_2.getText().toString();
-        String x_2=te_1.getText().toString()+"%"+mas.getBytes().toString();
+        String tipo="coach",titulo="pruebas",star="2019-06-15 01:40:00.000000",fin="2019-06-26 2000:02:00.000000";
+        String x_1=te_1.getText().toString()+" "+te_2.getText().toString()+":00.000000";
+        String x_2=te_1.getText().toString()+" "+mas+":00.000000";
 
         String URL="http://puntosingular.mx/cas/conexcion_coach/pruebas.php?id_="+id+"&type="+tipo+"&title="+titulo+"&start="+x_1+"&end_="+x_2;
 
