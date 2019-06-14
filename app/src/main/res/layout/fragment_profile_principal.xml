@@ -40,7 +40,8 @@
                     android:text=" "
                     android:textColor="@color/colorTitle"
                     android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/t2"
@@ -51,7 +52,8 @@
                     android:text=" "
                     android:textColor="@color/colorSubTitle"
                     android:textSize="18sp"
-                    android:textStyle="normal" />
+                    android:textStyle="normal"
+                    android:visibility="gone"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -162,6 +164,7 @@
             android:orientation="vertical">
 
             <Button
+                android:layout_marginTop="15dp"
                 android:id="@+id/button_Password"
                 android:layout_width="207dp"
                 android:layout_height="40dp"
