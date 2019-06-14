@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -31,6 +30,7 @@ public class Activity_Agendar extends AppCompatActivity implements Response.List
     String month;
     String day;
     String mas;
+    String Minutos;
     //barra de progreso
     ProgressDialog progreso;
 
@@ -65,9 +65,9 @@ public class Activity_Agendar extends AppCompatActivity implements Response.List
                         //te_1.setText(year+"/"+"0"+(monthOfYear+1)+"/"+dayOfMonth);
                         if(monthOfYear < 10){
 
-                            month = "0" + monthOfYear;
+                            month = "0" + (monthOfYear+1);
                         }else if(monthOfYear >=10){
-                            month=""+monthOfYear;
+                            month=""+(monthOfYear+1);
                         }
                         if(dayOfMonth < 10){
 
@@ -90,12 +90,16 @@ public class Activity_Agendar extends AppCompatActivity implements Response.List
                 TimePickerDialog timePickerDialog = new TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                        te_2.setText(hourOfDay+":"+minute);
+                        if(minute>=10){
+                            Minutos=""+minute;
+                        }else{
+                            Minutos="0"+minute;
+                        }
+                        te_2.setText(hourOfDay+":"+Minutos);
                         mas=(hourOfDay+":"+(minute+15));
                     }
                 },hora,minutos,false);
                 timePickerDialog.show();
-
                 break;
             case R.id.add:
                 cargarWebService();
@@ -120,7 +124,7 @@ public class Activity_Agendar extends AppCompatActivity implements Response.List
         int id=14;
         String tipo="coach",titulo="pruebas",star="2019-06-17%2000:02:00.000000",fin="2019-06-26%2000:02:00.000000";
         String x_1=te_1.getText().toString()+"%"+te_2.getText().toString();
-        String x_2=te_1.getText().toString()+"%"+mas;
+        String x_2=te_1.getText().toString()+"%"+mas.getBytes().toString();
 
         String URL="http://puntosingular.mx/cas/conexcion_coach/pruebas.php?id_="+id+"&type="+tipo+"&title="+titulo+"&start="+x_1+"&end_="+x_2;
 
