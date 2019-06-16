@@ -186,6 +186,9 @@ class HwAdapter extends BaseAdapter {
         for (int i = 0; i < len; i++) {
             HomeCollection cal_obj=HomeCollection.date_collection_arr.get(i);
             String date=cal_obj.date;
+            //Tipo
+            String tipo = cal_obj.description;
+
             int len1=day_string.size();
             if (len1>pos) {
 
@@ -196,9 +199,16 @@ class HwAdapter extends BaseAdapter {
 
                     } else {
                         v.setBackgroundColor(Color.parseColor("#343434"));
-                       v.setBackgroundResource(R.drawable.rounded_calender);
-                        txt.setTextColor(Color.parseColor("#696969"));
-                    }
+
+                        if (tipo.equalsIgnoreCase("Coaching")) {
+                            v.setBackgroundResource(R.drawable.circulo_coachaceptada);
+                            txt.setTextColor(Color.parseColor("#696969"));
+                        }
+                        if (tipo.equalsIgnoreCase("Speaking"))
+                        {
+                            v.setBackgroundResource(R.drawable.circulo_speakeraceptada);
+                            txt.setTextColor(Color.parseColor("#696969"));
+                        } }
 
                 }
             }

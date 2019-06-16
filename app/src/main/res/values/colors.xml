@@ -7,4 +7,11 @@
     <color name="colorText">#FFFFFF</color>
     <color name="colorTitle">#362742</color>
     <color name="colorSubTitle">#c5c9cf</color>
+    <color name="color_speakerDisponible">#71B247</color>
+    <color name="color_coachDisponible">#569CDB</color>
+    <color name="color_speakerPendiente">#F4BE19</color>
+    <color name="color_coachPendiente">#F67B28</color>
+    <color name="color_speakerAceptada">#548035</color>
+    <color name="color_coachAceptada">#2F5496</color>
+
 </resources>
