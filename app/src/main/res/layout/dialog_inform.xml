@@ -1,47 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <RelativeLayout
+    android:layout_height="match_parent"
+    tools:context=".dialogo">
+
+    <ImageView
+        android:id="@+id/imageView6"
         android:layout_width="match_parent"
-        android:id="@+id/tv_title"
-        android:layout_height="60dp">
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:id="@+id/img_cross"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/multiply"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:layout_centerInParent="true"
-            android:text="Holiday"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/img_cross"
-            android:textSize="18dp"
-            android:textColor="@color/colorPrimary"
-            android:id="@+id/tv_date"/>
+        android:layout_height="123dp"
+        app:srcCompat="@drawable/platicando"
+
+        />
+
+    <ListView
+        android:id="@+id/list_teachers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="324px"
+        android:layout_marginBottom="@dimen/fab_size_normal"
+        android:divider="#004e4e4e"
+        android:dividerHeight="0dp"></ListView>
+
+    <RelativeLayout
+        android:id="@+id/tv_titlee"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/list_teachers"
+        android:layout_marginTop="-57dp">
+
+
+        <Button
+            android:id="@+id/BotonA"
+            android:layout_width="122dp"
+            android:layout_height="35dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="18dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/botonesredondos2"
+            android:text="ACCEPT SESION"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#00FD0000"
+            android:textColorLink="#FF0000"
+            android:onClick="HOLaperro"/>
+
+        <Button
+            android:id="@+id/btncancel2"
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:layout_weight="0.5"
+            android:background="@drawable/botonesredondos2"
+            android:text="CANCEL SESSION"
+            android:textColor="#FFFFFF"
+            />
+
         <View
             android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
+            android:layout_height="0.2dp"
             android:layout_alignParentBottom="true"
-            android:background="#939393"
-            android:layout_height="0.2dp"/>
+            android:layout_marginTop="10dp"
+            android:background="#939393" />
 
     </RelativeLayout>
-    <ListView
-        android:layout_width="wrap_content"
-        android:id="@+id/list_teachers"
-        android:divider="#004e4e4e"
-        android:layout_below="@+id/tv_title"
-        android:dividerHeight="0dp"
-        android:layout_height="wrap_content">
-    </ListView>
-
 </RelativeLayout>

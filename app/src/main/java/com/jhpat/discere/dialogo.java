@@ -60,7 +60,7 @@ public class dialogo extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cdialogo);
+        setContentView(R.layout.dialog_inform);
 
 
         recibirDatos();
@@ -69,7 +69,7 @@ public class dialogo extends AppCompatActivity {
 
 
 
-        Button aceptar = (Button) findViewById(R.id.btnaceptar);
+        Button aceptar = (Button) findViewById(R.id.BotonA);
         aceptar.setOnClickListener(new View.OnClickListener() {   @Override
         public void onClick(View v) {
 

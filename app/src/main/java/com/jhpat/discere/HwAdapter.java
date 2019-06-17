@@ -8,9 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -244,14 +246,9 @@ class HwAdapter extends BaseAdapter {
             final Dialog dialogs = new Dialog(context);
             dialogs.setContentView(R.layout.dialog_inform);
             listTeachers = (ListView) dialogs.findViewById(R.id.list_teachers);
-            ImageView imgCross = (ImageView) dialogs.findViewById(R.id.img_cross);
+            Button imgCross = (Button) dialogs.findViewById(R.id.BotonA);
             listTeachers.setAdapter(new DialogAdaptorStudent(context, getMatchList(jbarrays + "")));
-            imgCross.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dialogs.dismiss();
-                }
-            });
+
             dialogs.show();
 
         }
